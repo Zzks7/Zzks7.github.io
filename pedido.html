@@ -1,71 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Namora comigo?</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        a {
-            text-decoration: none;
-        }
+    body {
+      font-family: "Comic Sans MS", "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ffd1dc, #f7c8ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-        .box {
-            font-size: 20px;
-            color: white;
-            height: 250px;
-            width: 350px;
-            border-radius: 10px;
-            background: #191919;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    #conteudo {
+      text-align: center;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 90%;
+    }
 
-        .buttons-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 50px;
-            width: 150px;
-        }
+    h2 {
+      color: #ff4d88;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
 
-        button {
-            height: 30px;
-            width: 50px;
-            background: white;
-            color: black;
-            font-weight: 600;
-            border-radius: 5px;
-            border: 2px solid black;
-        }
-    </style>
-    <title>Pedido Irrecusável</title>
+    .btn {
+      background: #ff66a3;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1em;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .btn:hover {
+      background: #ff3385;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
-<body>
-    <div class="box">
-        <p>Quer Namorar comigo?</p>
-        <div class="buttons-container">
-            <button><a href="https://www.google.com/search?q=noice&oq=noice&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIJCAYQABgKGIAEMgkIBxAAGAoYgAQyCQgIEAAYChiABDIJCAkQABgKGIAE0gEHOTQxajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:c000df66,vid:a8c5wmeOL9o">Sim</a></button>
-            <button id="no">Não</button>
-        </div>
-    </div>
-</body>
-<script>
-    let button = document.getElementById('no');
-    let height = window.innerHeight - 50;
-    let width = window.innerWidth - 50;
 
-    button.addEventListener('mouseover', function () {
-        button.style.position = "absolute"
-        button.style.top = Math.random() * height + "px";
-        button.style.left = Math.random() * width + "px";
-    })
-</script>
+<body>
+  <div id="conteudo">
+    <h2>Aceita namorar comigo? 💖</h2>
+    <button class="btn" onclick="sim()">Sim 🥰</button>
+    <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)">Não 😢</button>
+  </div>
+
+  <script>
+    function sim() {
+      alert("Você aceitou namorar comigo! 😍💖");
+      location.href = "https://music.youtube.com/watch?v=izGwDsrQ1eQ";
+    }
+
+    function desvia(btn) {
+      const i = Math.random() * window.innerHeight * 0.8;
+      const j = Math.random() * window.innerWidth * 0.8;
+      btn.style.position = "absolute";
+      btn.style.top = i + "px";
+      btn.style.left = j + "px";
+    }
+  </script>
+</body>
+
 </html>
